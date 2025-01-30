@@ -10,6 +10,15 @@ html {
     box-sizing: inherit;
   }
 
+/*
+
+things i learned that are cool/ useful: 
+- resetting default css styles 
+- making sure unwanted styles aren't in the webpage by accident (use css selectors wisely to override styles if necessary, .secondary-text 
+showed me that there was a margin-bottom and i was losing my mind over it because the footer had unwanted space at the bottom so I override it once I found out the issue)
+- still need to work with images because at the moment to not make images look weird I use object-fit but at times it sacrifices the actual image rather than quality to adjust to certain dimension
+*/
+
 body {
     font-family: 'Roboto', sans-serif;
     min-height: 100vh; 
@@ -17,10 +26,12 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0;
+    padding: 0;
 }
 
 .hero-container, .info-container, .quote-container, .call-to-action-container, footer {
     padding: 0 150px;
+    flex: 1;
 }
 
 .hero-section {
@@ -38,6 +49,8 @@ body {
 
 /* stop being a perfectionist, as long as there's symmetry/ doesn't look to weird its okay */
 .wide-image {
+    min-width: 150px;
+    min-height: 150px;
     max-width: 500px;
     height: auto;
     border-radius: 10%;
@@ -117,10 +130,10 @@ h1 {
     align-items: center;
 }
 
-.info-cards {
+.info-cards{
     display: flex;
     justify-content: center;
-    gap: 8px;
+    gap: 16px;
     margin-bottom: 72px;
 }
 
@@ -140,7 +153,7 @@ div.secondary-text.darker {
     font-size: 16px;
 }
 
-.info-header-tex {
+.info-header-text{
     margin: 42px 0;
 }
 
@@ -157,5 +170,67 @@ object fit helps us determine what height/ width to use but some of the image's 
 }
 
 .quote-container {
-
+    background-color: #e5e7ebd7;
+    padding-top: 88px;
+    padding-bottom: 88px;
 }
+
+.quote-container .author {
+    text-align: right;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    color: black;
+    padding-right: 36px;
+}
+
+blockquote {
+    margin: 0;
+    font-size: 36px;
+    font-style: italic;
+    color: #616265;
+    font-weight: 300;
+    padding: 0 88px;
+}
+
+.call-to-action-container {
+    padding-top: 72px;
+    padding-bottom: 72px;
+}
+
+.sign-up-section {
+    background-color: #3882F6;
+    color: white;
+    padding: 42px 112px;
+    /* fill parent container width */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.action-sign-up-button {
+    border: 3px solid white;
+    font-size: 16px;
+    padding: 8px 30px;
+    align-self: flex-end;
+}
+
+.text-action-main {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* footer alone didnt work, i needed to specify the class too, why couldn't a simple footer work? 
+answer: its because the .secondary-text class had margin already..
+*/
+footer.secondary-text {
+    display: flex;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
