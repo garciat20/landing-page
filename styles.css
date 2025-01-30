@@ -1,9 +1,143 @@
-.wide-image{
-    width: 400px;
-    height: auto;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+html {
+    box-sizing: border-box;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+body {
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh; 
+    /* https://www.reddit.com/r/css/comments/133mrju/how_do_i_make_body_the_height_of_the_entire/ -> different way to set height to cover viewport */
+    display: flex;
+    flex-direction: column;
+    margin: 0;
 }
 
-.info-image{
-    width: 150px;
+.hero-container, .info-container, .quote-container, .call-to-action-container, footer {
+    padding: 0 150px;
+}
+
+.hero-section {
+    margin-bottom: 88px;
+    display: flex;
+    gap: 36px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.main-text-container {
+    flex: 1;
+}
+
+/* stop being a perfectionist, as long as there's symmetry/ doesn't look to weird its okay */
+.wide-image {
+    max-width: 500px;
     height: auto;
+    border-radius: 10%;
+    flex: 1;
+}
+
+.header{
+    /* margin-top: 16px; */
+    /* margin-bottom: 52px; */
+    display: flex;
+    justify-content: space-between;
+    margin: 24px 0 72px 0;
+    align-items: center;
+}
+
+.header-links {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    gap: 24px;
+}
+
+a {
+    text-decoration: none;
+}
+
+button { 
+    background-color: #3882F6;
+    color: white;
+    padding: 8px 24px;
+    font-size: 14px;
+    border-radius: 10%;
+    border: none;
+}
+
+.signup-button {
+    font-weight: 900;
+}
+
+/*  */
+
+.secondary-text {
+    font-size: 18px;
+    color: #e5e7ebd7;
+    margin: 8px 0;
+}
+
+.darker {
+    color: gray;
+}
+
+.hero-container, footer {
+    background-color: #1F2937;    
+}
+
+.logo, .hero-main-text {
+    color: #F9FAF8;
+ }
+
+.logo {
+    font-size: 24px;
+}
+
+.hero-main-text {
+    font-size: 48px;
+    font-weight: 900;
+}
+
+h1 {
+    margin: 0;
+}
+
+.info-container {
+    /* background-color: orange; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-cards{
+    display: flex;
+    justify-content: center;
+    border: 1px solid brown;
+}
+
+.info-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.info-header-text{
+    margin: 36px 0;
+}
+
+/* lookup why this works */
+.info-image {
+    max-width: 150px;
+    max-height: 150px;
 }
