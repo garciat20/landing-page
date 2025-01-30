@@ -78,8 +78,7 @@ button {
     font-weight: 900;
 }
 
-/*  */
-
+/* NOTE: darker and secondary text classes could be adjusted in the HTML to use chain selectors but im too lazy so im using the "order of magnitude" rule where the last css rule takes over :p */
 .secondary-text {
     font-size: 18px;
     color: #e5e7ebd7;
@@ -112,32 +111,51 @@ h1 {
 }
 
 .info-container {
-    /* background-color: orange; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.info-cards{
+.info-cards {
     display: flex;
     justify-content: center;
-    border: 1px solid brown;
+    gap: 8px;
+    margin-bottom: 72px;
 }
 
-.info-card {
+div.info-card {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 200px;
+    max-height: 300px;
 }
 
-.info-header-text{
-    margin: 36px 0;
+div.secondary-text.darker {
+    /* display: inline-block; */
+    text-align: center; 
+    max-width: 175px;
+    font-size: 16px;
 }
 
-/* lookup why this works */
+.info-header-tex {
+    margin: 42px 0;
+}
+
+/* we made the parent container a specified height/ width to not exceed and as a safety net we made the max of the image NOT exceed that parent container dimension
+
+object fit helps us determine what height/ width to use but some of the image's content will be clipped if it doesn't scale properly (if no scale good -> sacrifice some of the image) */
 .info-image {
-    max-width: 150px;
-    max-height: 150px;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    width: 175px;
+    height: 175px;
+    border-radius: 25%;
+}
+
+.quote-container {
+
 }
